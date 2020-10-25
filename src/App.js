@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 class App extends React.Component {
   state = {
@@ -6,11 +7,18 @@ class App extends React.Component {
     movies: [],
   };
 
+  // API 호출하여 영화 데이터 로드
+  getMovies = async () => {
+    const {
+      data: {
+        data: { movies },
+      },
+    } = await axios.get("https://yts-proxy.now.sh/list_movies.json");
+    this.setState({ movies, isLoading: false });
+  };
+
   componentDidMount() {
-    // 영화 데이터 로딩
-    setTimeout(() => {
-      this.setState({ isLoading: false });
-    }, 3000);
+    this.getMovies();
   }
 
   render() {
