@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // state가 불필요하므로 함수형 컴포넌트로 작성
-function Movie() {
-  return <h1></h1>;
+function Movie({ id, title, year, summary, poster }) {
+  return <h4>{title}</h4>;
 }
 
 Movie.propTypes = {
