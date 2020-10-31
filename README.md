@@ -82,7 +82,7 @@
 ### Appendix. GitHub에 배포하기
 - `package.json`에 hompage 키와 키값을 browerlist 아래에 추가한다.
 - `package.json`의 scripts 키값에 다음을 추가한다.
-```json
+```
 {
     scripts: {
         ...
